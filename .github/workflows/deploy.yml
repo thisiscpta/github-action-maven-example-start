@@ -36,7 +36,7 @@ jobs:
              echo "${{ inputs.which-env }} variable URL : ${{ vars.URL }}"
              echo "${{ inputs.which-env }} password secrets : ${{ secrets.SIT_PASSWORD }}"
              echo "${{ inputs.which-env }} username secrets : ${{ secrets.SIT_USERNAME }}"
-             echo "which jira ??? :  ${{ secrets.JIRA_USER }}:${{ secrets.JIRA_TOKEN }}"
+             echo "which jira ??? :  ${{ var.JIRA_USER }}:${{ var.JIRA_TOKEN }}"
       - name: Get release assest
         id: download
         uses: actions/download-artifact@v3
@@ -57,4 +57,4 @@ jobs:
          run: |
              echo Hello, world ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
              echo ${{ inputs.which-issue}}
-             ansible-playbook -u ansibleuser --extra-vars "whichenv=${{ inputs.which-env }} whichasset=${{ inputs.which-asset }} whichissue=${{ inputs.which-issue }} whichjira=${{ secrets.JIRA_USER }}:${{ secrets.JIRA_TOKEN }}" -i ansible/inventory ansible/hello-world.yaml 
+             ansible-playbook -u ansibleuser --extra-vars "whichenv=${{ inputs.which-env }} whichasset=${{ inputs.which-asset }} whichissue=${{ inputs.which-issue }} whichjira=${{ var.JIRA_USER }}:${{ var.JIRA_TOKEN }}" -i ansible/inventory ansible/hello-world.yaml 

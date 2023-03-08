@@ -14,7 +14,7 @@ env:
 jobs:
   build_and_test:
     
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Build and test
     timeout-minutes: 4
 
@@ -48,7 +48,7 @@ jobs:
         
   package-job:
   
-      runs-on: ubuntu-latest
+      runs-on: self-hosted
       name: Package job
       needs: [compliance_checks]
       outputs:
@@ -78,7 +78,7 @@ jobs:
                
   create-release:
     name: Create release
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions: 
       contents: write
     needs: [package-job]

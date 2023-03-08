@@ -72,16 +72,16 @@
          
   <repositories>
     <repository>
-      <id>maven-group</id>
-      <url>http://52.90.153.214:8081/repository/maven-group/</url>
+      <id>maven-central</id>
+      <url>http://52.90.153.214:8081/repository/maven-central/</url>
     </repository>
   </repositories>
          
  <pluginRepositories>
   <pluginRepository>
-   <id>maven-group</id>
+   <id>maven-central</id>
    <name>Internal Mirror of Central Plugins Repository</name>
-   <url>http://52.90.153.214:8081:8081/repository/maven-group/</url>
+   <url>http://52.90.153.214:8081/repository/maven-central/</url>
   </pluginRepository>
  </pluginRepositories>
          

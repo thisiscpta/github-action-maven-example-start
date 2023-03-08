@@ -69,5 +69,12 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+         
+  <repositories>
+    <repository>
+      <id>maven-group</id>
+      <url>http://75.101.235.112:8081/repository/maven-group/</url>
+    </repository>
+  </repositories>
+         
 </project>

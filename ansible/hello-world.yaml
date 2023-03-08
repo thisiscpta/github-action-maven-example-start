@@ -16,7 +16,10 @@
     - name: Echo Issue
       debug:
         msg: "{{ whichissue }}"        
-    - name: Transfer Package
+    - name: Echo Issue
+      debug:
+        msg: "{{ whichjira }}"  
+  - name: Transfer Package
       copy:
         src: "{{ whichasset }}"
         dest: /home/ansibleuser/{{ whichasset }}
@@ -33,4 +36,4 @@
     - name: Execute Jar
       shell: java -jar github-action-maven-tutorial-1.0-SNAPSHOT-jar-with-dependencies.jar App >> verify_program.output
     - name: UpdateJira
-      shell: ./update-jira.sh {{ whichissue }} {{ whichasset }}
+      shell: ./update-jira.sh {{ whichissue }} {{ whichasset }} {{ whichjira }}
